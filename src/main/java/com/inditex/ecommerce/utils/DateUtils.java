@@ -19,7 +19,7 @@ public class DateUtils {
         try {
             ret = temp.parse(date);
         } catch (ParseException e) {
-            throw new ServiceException(null, CommonErrorTemplate.PRICE_NOT_FOUND, ErrorParameters.builder()
+            throw new ServiceException(null, CommonErrorTemplate.UNPARSEABLE_DATE, ErrorParameters.builder()
                 .parameter("date", date)
                 .build());
         }

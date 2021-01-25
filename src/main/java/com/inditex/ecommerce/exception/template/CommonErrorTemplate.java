@@ -12,7 +12,9 @@ import lombok.Getter;
 public enum CommonErrorTemplate implements ErrorTemplate {
 
     PRICE_NOT_FOUND("Price not found for this parameters: application date: ${applicationDate}, brand id: ${brandId}, product id: ${productId}",
-        CommonErrorTemplate.PRODUCT_NOT_FOUND, HttpStatus.NOT_FOUND, false, true);
+        CommonErrorTemplate.PRODUCT_NOT_FOUND, HttpStatus.NOT_FOUND, false, true),
+    UNPARSEABLE_DATE("We can't parse the date: ${date}",
+        CommonErrorTemplate.PRODUCT_NOT_FOUND, HttpStatus.UNPROCESSABLE_ENTITY, true, true);
 
     private final String messageTemplate;
     private final String howToSolve;

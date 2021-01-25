@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.inditex.ecommerce.entity.Price;
 import com.inditex.ecommerce.entity.Product;
+import com.inditex.ecommerce.exception.model.ErrorDTO;
 import com.inditex.ecommerce.model.EBrand;
 import com.inditex.ecommerce.model.EProduct;
 import com.inditex.ecommerce.service.price.IPriceService;
@@ -33,7 +34,11 @@ public class ProductController {
         value = "This operation returns a product"
     )
     @ApiResponses(value = {
-        @ApiResponse(code = 200, message = "OK, successful operation", response = Product.class)
+        @ApiResponse(code = 200, message = "OK, successful operation", response = Product.class),
+        @ApiResponse(code = 404, message = "Price not found", response = ErrorDTO.class),
+        @ApiResponse(code = 422, message = "Mandatory fields missing / validation error", response = ErrorDTO.class),
+        @ApiResponse(code = 500, message = "Internal server error", response = ErrorDTO.class),
+        @ApiResponse(code = 503, message = "Service unavailable", response = ErrorDTO.class)
     })
     @GetMapping(value = "products", produces = {
         MediaType.APPLICATION_JSON_VALUE

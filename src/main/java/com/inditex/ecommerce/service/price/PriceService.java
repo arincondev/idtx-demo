@@ -1,8 +1,8 @@
 package com.inditex.ecommerce.service.price;
 
+
 import static com.inditex.ecommerce.utils.DateUtils.convertToDate;
 
-import java.text.ParseException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
@@ -32,7 +32,7 @@ public class PriceService implements IPriceService {
     private final IPriceDao priceDao;
 
     @Override
-    public Price findByBrandAndProduct(final Long brandId, final Integer productId, final String applicationDate) throws ParseException {
+    public Price findByBrandAndProduct(final Long brandId, final Integer productId, final String applicationDate) {
         final Optional<Brand> brand = brandService.findById(brandId);
         final Optional<Product> product = productService.findByProductId(productId);
         final Rate rate = rateService.findByStartDateLessThanEqualAndEndDateGreaterThanEqual(convertToDate(applicationDate));

@@ -1,7 +1,6 @@
 package com.inditex.ecommerce.entity;
 
 import java.io.Serializable;
-import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -31,7 +30,4 @@ public class Brand implements Serializable {
 
     @Column(name = "name", nullable = false, length = 100)
     private String name;
-
-    @Column(name = "creation_date")
-    private Date creationDate;
 }

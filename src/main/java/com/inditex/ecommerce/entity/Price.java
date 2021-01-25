@@ -1,7 +1,6 @@
 package com.inditex.ecommerce.entity;
 
 import java.io.Serializable;
-import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -43,7 +42,4 @@ public class Price implements Serializable {
     @ManyToOne
     @JoinColumn(name = "product_id", nullable = false, referencedColumnName = "product_id")
     private Product product;
-
-    @Column(name = "creation_date")
-    private Date creationDate;
 }

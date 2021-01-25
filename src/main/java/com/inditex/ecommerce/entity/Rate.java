@@ -47,7 +47,4 @@ public class Rate implements Serializable {
 
     @Column(name = "end_date")
     private Date endDate;
-
-    @Column(name = "creation_date")
-    private Date creationDate;
 }

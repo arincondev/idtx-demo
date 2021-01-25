@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 public enum EProduct {
     JEANS(35455, "Jeans", "Blue jeans"),
     SHIRT(35453, "Shirt", "White jeans"),
-    SHOES(35452, "Shoes", "Black shoes");
+    SHOES(354551, "Shoes", "Black shoes");
 
     protected Integer id;
     protected String name;
